@@ -4,6 +4,8 @@
  */
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { AuthProvider } from './components/auth/AuthProvider';
+import AuthGate from './components/auth/AuthGate';
 import Navbar from './components/layout/Navbar';
 import BottomNav from './components/layout/BottomNav';
 import Dashboard from './pages/Dashboard';
@@ -14,20 +16,24 @@ import BroadcastGuide from './pages/BroadcastGuide';
 
 export default function App() {
   return (
-    <Router>
-      <div className="min-h-screen bg-background text-on-surface">
-        <Navbar />
-        <main className="pt-20 pb-24 px-4 max-w-7xl mx-auto">
-          <Routes>
-            <Route path="/" element={<Dashboard />} />
-            <Route path="/schedule" element={<Schedule />} />
-            <Route path="/match/:id" element={<MatchDetails />} />
-            <Route path="/watchlist" element={<Watchlist />} />
-            <Route path="/broadcast" element={<BroadcastGuide />} />
-          </Routes>
-        </main>
-        <BottomNav />
-      </div>
-    </Router>
+    <AuthProvider>
+      <AuthGate>
+        <Router>
+          <div className="min-h-screen bg-background text-on-surface">
+            <Navbar />
+            <main className="pt-20 pb-24 px-4 max-w-7xl mx-auto">
+              <Routes>
+                <Route path="/" element={<Dashboard />} />
+                <Route path="/schedule" element={<Schedule />} />
+                <Route path="/match/:id" element={<MatchDetails />} />
+                <Route path="/watchlist" element={<Watchlist />} />
+                <Route path="/broadcast" element={<BroadcastGuide />} />
+              </Routes>
+            </main>
+            <BottomNav />
+          </div>
+        </Router>
+      </AuthGate>
+    </AuthProvider>
   );
 }

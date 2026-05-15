@@ -1,0 +1,6 @@
+{
+  "name": "SportSphere",
+  "description": "Advanced AI-powered sports companion with match summaries, smart recommendations, streaming assistance, and excitement predictors.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -15,7 +15,7 @@ export const mockMatches: Match[] = [
     region: 'Europe',
     logoA: 'https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg',
     logoB: 'https://upload.wikimedia.org/wikipedia/en/e/eb/Manchester_City_FC_badge.svg',
-    banner: 'https://placehold.co/800x400?text=Match'
+    banner: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Santiago_Bernab%C3%A9u_2014.jpg/800px-Santiago_Bernab%C3%A9u_2014.jpg'
   },
   {
     id: '2',
@@ -31,7 +31,7 @@ export const mockMatches: Match[] = [
     region: 'USA',
     logoA: 'https://upload.wikimedia.org/wikipedia/commons/3/3c/Los_Angeles_Lakers_logo.svg',
     logoB: 'https://upload.wikimedia.org/wikipedia/en/8/8f/Boston_Celtics.svg',
-    banner: 'https://placehold.co/800x400?text=Match'
+    banner: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Staples_Center%2C_Los_Angeles%2C_CA_%28cropped%29.jpg/800px-Staples_Center%2C_Los_Angeles%2C_CA_%28cropped%29.jpg'
   },
   {
     id: '3',
@@ -46,9 +46,9 @@ export const mockMatches: Match[] = [
     date: '2026-05-22', // FRI
     region: 'Global',
     isIndividual: true,
-    logoA: 'https://placehold.co/800x400?text=Match',
-    logoB: 'https://placehold.co/800x400?text=Match',
-    banner: 'https://placehold.co/800x400?text=Match'
+    logoA: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Max_Verstappen_2017_Malaysia_3.jpg/800px-Max_Verstappen_2017_Malaysia_3.jpg',
+    logoB: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Lewis_Hamilton_2016_Malaysia_2.jpg/800px-Lewis_Hamilton_2016_Malaysia_2.jpg',
+    banner: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/twentythree/Monaco_Formula_1_Grand_Prix.jpg/800px-Monaco_Grand_Prix.jpg'
   },
   {
     id: '4',
@@ -63,9 +63,9 @@ export const mockMatches: Match[] = [
     date: '2026-05-22', // FRI
     region: 'Europe',
     isIndividual: true,
-    logoA: 'https://placehold.co/800x400?text=Match',
-    logoB: 'https://placehold.co/800x400?text=Match',
-    banner: 'https://placehold.co/800x400?text=Match'
+    logoA: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Novak_Djokovic_at_the_2023_US_Open_%28cropped%29.jpg/800px-Novak_Djokovic_at_the_2023_US_Open_%28cropped%29.jpg',
+    logoB: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Carlos_Alcaraz_%28ESP%29_2022.jpg/800px-Carlos_Alcaraz_%28ESP%29_2022.jpg',
+    banner: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Wimbledon_Centre_Court_2010.jpg/800px-Wimbledon_Centre_Court_2010.jpg'
   },
   {
     id: '5',
@@ -81,7 +81,7 @@ export const mockMatches: Match[] = [
     region: 'Europe',
     logoA: 'https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg',
     logoB: 'https://upload.wikimedia.org/wikipedia/en/c/cc/Chelsea_FC.svg',
-    banner: 'https://placehold.co/800x400?text=Match'
+    banner: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Anfield_%28Liverpool_F.C._Stadium%29.jpg/800px-Anfield_%28Liverpool_F.C._Stadium%29.jpg'
   },
   {
     id: '6',
@@ -96,8 +96,8 @@ export const mockMatches: Match[] = [
     date: '2026-05-18', // MON
     region: 'USA',
     logoA: 'https://upload.wikimedia.org/wikipedia/en/0/01/Golden_State_Warriors_logo.svg',
-    logoB: 'https://placehold.co/800x400?text=Match',
-    banner: 'https://placehold.co/800x400?text=Match'
+    logoB: 'https://upload.wikimedia.org/wikipedia/en/d/dc/Phoenix_Suns_logo.svg',
+    banner: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Chase_Center_San_Francisco_2019.jpg/800px-Chase_Center_San_Francisco_2019.jpg'
   },
   {
     id: '7',
@@ -112,9 +112,9 @@ export const mockMatches: Match[] = [
     date: '2026-05-19', // TUE
     region: 'Europe',
     isIndividual: true,
-    logoA: 'https://placehold.co/800x400?text=Match',
-    logoB: 'https://placehold.co/800x400?text=Match',
-    banner: 'https://placehold.co/800x400?text=Match'
+    logoA: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Carlos_Alcaraz_%28ESP%29_2022.jpg/800px-Carlos_Alcaraz_%28ESP%29_2022.jpg',
+    logoB: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Jannik_Sinner_2021.jpg/800px-Jannik_Sinner_2021.jpg',
+    banner: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Court_Philippe-Chatrier_%282%29.jpg/800px-Court_Philippe-Chatrier_%282%29.jpg'
   },
   {
     id: '8',
@@ -129,8 +129,8 @@ export const mockMatches: Match[] = [
     date: '2026-05-23', // SAT
     region: 'Europe',
     logoA: 'https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg',
-    logoB: 'https://placehold.co/800x400?text=Match',
-    banner: 'https://placehold.co/800x400?text=Match'
+    logoB: 'https://upload.wikimedia.org/wikipedia/commons/1/1b/FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg',
+    banner: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Emirates_Stadium_east_side_at_dusk.jpg/800px-Emirates_Stadium_east_side_at_dusk.jpg'
   },
   {
     id: '9',
@@ -145,9 +145,9 @@ export const mockMatches: Match[] = [
     date: '2026-05-24', // SUN
     region: 'Global',
     isIndividual: true,
-    logoA: 'https://placehold.co/800x400?text=Match',
-    logoB: 'https://placehold.co/800x400?text=Match',
-    banner: 'https://placehold.co/800x400?text=Match'
+    logoA: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Max_Verstappen_2017_Malaysia_3.jpg/800px-Max_Verstappen_2017_Malaysia_3.jpg',
+    logoB: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Charles_Leclerc_2019.jpg/800px-Charles_Leclerc_2019.jpg',
+    banner: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Silverstone_Circuit._The_Home_of_British_Motor_Racing.jpg/800px-Silverstone_Circuit._The_Home_of_British_Motor_Racing.jpg'
   },
   {
     id: '10',
@@ -162,8 +162,8 @@ export const mockMatches: Match[] = [
     date: '2026-05-22', // FRI
     region: 'Global',
     logoA: 'https://upload.wikimedia.org/wikipedia/en/f/f9/T1_logo.svg',
-    logoB: 'https://placehold.co/800x400?text=Match',
-    banner: 'https://placehold.co/800x400?text=Match'
+    logoB: 'https://upload.wikimedia.org/wikipedia/en/9/91/Gen.G_Esports_logo.svg',
+    banner: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/IEM_Katowice_2018.jpg/800px-IEM_Katowice_2018.jpg'
   },
   {
     id: '11',
@@ -177,8 +177,8 @@ export const mockMatches: Match[] = [
     genre: 'esports',
     date: '2026-05-22', // FRI
     region: 'Global',
-    logoA: 'https://placehold.co/800x400?text=Match',
-    logoB: 'https://placehold.co/800x400?text=Match',
-    banner: 'https://placehold.co/800x400?text=Match'
+    logoA: 'https://upload.wikimedia.org/wikipedia/en/9/95/Sentinels_logo.svg',
+    logoB: 'https://upload.wikimedia.org/wikipedia/en/4/43/Fnatic_logo.svg',
+    banner: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/IEM_Katowice_2018.jpg/800px-IEM_Katowice_2018.jpg'
   }
 ];

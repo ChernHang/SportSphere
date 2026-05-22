@@ -8,7 +8,7 @@ import regeneratedImage1779435231994 from '../assets/images/regenerated_image_17
 import regeneratedImage1779435232898 from '../assets/images/regenerated_image_1779435232898.avif';
 import regeneratedImage1779435234587 from '../assets/images/regenerated_image_1779435234587.avif';
 import regeneratedImage1779435236613 from '../assets/images/regenerated_image_1779435236613.webp';
-import regeneratedImage1779435240600 from '../assets/images/regenerated_image_1779435240600.webp';
+import regeneratedImage1779435240600 from '../assets/images/"https://placehold.co/400x300?text=Match"';
 import regeneratedImage1779435241524 from '../assets/images/regenerated_image_1779435241524.jpg';
 import regeneratedImage1779435242362 from '../assets/images/regenerated_image_1779435242362.svg';
 import regeneratedImage1779435243056 from '../assets/images/regenerated_image_1779435243056.svg';

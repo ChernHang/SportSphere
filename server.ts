@@ -26,16 +26,30 @@ async function startServer() {
   // API Routes
   app.post('/api/gemini/generate-summary', async (req, res) => {
     try {
-      const { matchData } = req.body;
+      const { matchData, variant } = req.body;
+      let tonePrompt = "energetic, informative, neutral.";
+      let wordLimitPrompt = "Keep under 120 words.";
+
+      if (variant === 'short') {
+        tonePrompt = "extremely short, brief, punchy, bulleted or single paragraph.";
+        wordLimitPrompt = "Keep under 50 words.";
+      } else if (variant === 'fan') {
+        tonePrompt = "highly passionate, energetic, celebratory, sports-fan style.";
+        wordLimitPrompt = "Keep under 120 words.";
+      } else if (variant === 'neutral') {
+        tonePrompt = "objective, calm, tactical, analytical, neutral commentator style.";
+        wordLimitPrompt = "Keep under 120 words.";
+      }
+
       const response = await ai.models.generateContent({
-        model: "gemini-3-flash-preview",
+        model: "gemini-3.5-flash",
         contents: `Write a short exciting sports match summary for:
           ${matchData.teamA} vs ${matchData.teamB}
           Tournament: ${matchData.tournament}
           Score: ${matchData.score}
           Key events: ${matchData.events}
-          Keep under 120 words.
-          Tone: energetic, informative, neutral.
+          ${wordLimitPrompt}
+          Tone: ${tonePrompt}
           Mention standout moments and the match result.
           No emojis.
           Return plain text only.`,
@@ -54,7 +68,7 @@ async function startServer() {
     try {
       const { userInterests, upcomingMatches } = req.body;
       const response = await ai.models.generateContent({
-        model: "gemini-3-flash-preview",
+        model: "gemini-3.5-flash",
         contents: `User interests:
           Favourite sports: ${userInterests.favouriteSports.join(', ')}
           Favourite teams: ${userInterests.favouriteTeams.join(', ')}
@@ -94,7 +108,7 @@ async function startServer() {
     try {
       const { userLocation, device, matchName, platforms } = req.body;
       const response = await ai.models.generateContent({
-        model: "gemini-3-flash-preview",
+        model: "gemini-3.5-flash",
         contents: `User location: ${userLocation}
           Device: ${device}
           Match: ${matchName}
@@ -120,7 +134,7 @@ async function startServer() {
     try {
       const { matchData } = req.body;
       const response = await ai.models.generateContent({
-        model: "gemini-3-flash-preview",
+        model: "gemini-3.5-flash",
         contents: `Analyse this upcoming match:
           ${matchData.teamA} vs ${matchData.teamB}
           Rankings: ${matchData.rankings}
@@ -155,7 +169,7 @@ async function startServer() {
     try {
       const { userData } = req.body;
       const response = await ai.models.generateContent({
-        model: "gemini-3-flash-preview",
+        model: "gemini-3.5-flash",
         contents: `Create a personalized sports digest for this user.
 
           Favourite sports: ${userData.favouriteSports.join(', ')}

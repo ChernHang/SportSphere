@@ -6,12 +6,10 @@ interface AuthContextType {
   user: User | null;
   session: Session | null;
   loading: boolean;
-  role: string | null;
-  isAdmin: boolean;
   signInAsGuest: () => Promise<void>;
   signInWithGoogle: () => Promise<void>;
-  signInWithEmail: (email: string, password: string) => Promise<{ error: any }>;
-  signUpWithEmail: (email: string, password: string) => Promise<{ error: any }>;
+  signInWithEmail: (email: string, password: string) => Promise<any>;
+  signUpWithEmail: (email: string, password: string) => Promise<any>;
   signOut: () => Promise<void>;
 }
 
@@ -21,55 +19,59 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [session, setSession] = useState<Session | null>(null);
   const [loading, setLoading] = useState(true);
-  const [role, setRole] = useState<string | null>(null);
-
-  const isAdmin = role === 'admin';
 
   useEffect(() => {
-    const fetchProfile = async (userId: string) => {
-      try {
-        const { data, error } = await supabase
-          .from('profiles')
-          .select('role')
-          .eq('id', userId)
-          .single();
-        
-        if (data && !error) {
-          setRole(data.role);
-          console.log(`[Auth] User: ${userId}, Role: ${data.role}`);
-        } else {
-          setRole('user');
+    let mounted = true;
+    let failsafe: NodeJS.Timeout;
+
+    const initializeAuth = async () => {
+      // Failsafe: ensure loading is cleared after 5 seconds no matter what
+      failsafe = setTimeout(() => {
+        if (mounted && loading) {
+          console.warn('[Auth] Initialization taking too long, clearing loading state');
+          setLoading(false);
         }
+      }, 5000);
+
+      try {
+        const { data: { session } } = await supabase.auth.getSession();
+        if (!mounted) {
+          clearTimeout(failsafe);
+          return;
+        }
+
+        setSession(session);
+        setUser(session?.user ?? null);
       } catch (err) {
-        console.error('Error fetching role:', err);
-        setRole('user');
+        console.error('Auth initialization error:', err);
+      } finally {
+        if (mounted) {
+          setLoading(false);
+          clearTimeout(failsafe);
+        }
       }
     };
 
-    // Get initial session
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      setSession(session);
-      setUser(session?.user ?? null);
-      if (session?.user) {
-        fetchProfile(session.user.id);
-      }
-      setLoading(false);
-    });
+    initializeAuth();
 
     // Listen for auth changes
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
-      setSession(session);
-      setUser(session?.user ?? null);
-      if (session?.user) {
-        fetchProfile(session.user.id);
-      } else {
-        setRole(null);
+    const { data: { subscription } } = supabase.auth.onAuthStateChange(async (event, session) => {
+      if (!mounted) return;
+      
+      try {
+        setSession(session);
+        setUser(session?.user ?? null);
+      } catch (err) {
+        console.error('Auth state change error:', err);
+      } finally {
+        if (mounted) setLoading(false);
       }
-      setLoading(false);
     });
 
     return () => {
+      mounted = false;
       subscription.unsubscribe();
+      if (failsafe) clearTimeout(failsafe);
     };
   }, []);
 
@@ -107,7 +109,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   };
 
   return (
-    <AuthContext.Provider value={{ user, session, loading, role, isAdmin, signInAsGuest, signInWithGoogle, signInWithEmail, signUpWithEmail, signOut }}>
+    <AuthContext.Provider value={{ user, session, loading, signInAsGuest, signInWithGoogle, signInWithEmail, signUpWithEmail, signOut }}>
       {children}
     </AuthContext.Provider>
   );

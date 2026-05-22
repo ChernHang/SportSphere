@@ -1,13 +1,13 @@
 import { useState, FormEvent, useEffect } from 'react';
 import { useAuth } from './AuthProvider';
 import { supabase } from '../../lib/supabase';
-import { Mail, Lock, LogIn, Sparkles, UserPlus, Fingerprint, ShieldCheck, ShieldAlert } from 'lucide-react';
+import { Mail, Lock, LogIn, Sparkles, UserPlus, Fingerprint } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Link, useNavigate } from 'react-router-dom';
 import { cn } from '../../lib/utils';
 
 export default function LoginPage() {
-  const { signInWithEmail, signUpWithEmail, signInWithGoogle, signInAsGuest, user, isAdmin } = useAuth();
+  const { signInWithEmail, signUpWithEmail, signInWithGoogle, signInAsGuest, user } = useAuth();
   const navigate = useNavigate();
   const [isSignUp, setIsSignUp] = useState(false);
   const [email, setEmail] = useState('');
@@ -18,13 +18,9 @@ export default function LoginPage() {
   // Handle automatic redirect if user is already logged in
   useEffect(() => {
     if (user && !loading) {
-      if (isAdmin) {
-        navigate('/admin/dashboard');
-      } else {
-        navigate('/');
-      }
+      navigate('/');
     }
-  }, [user, isAdmin, loading, navigate]);
+  }, [user, loading, navigate]);
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -40,6 +36,7 @@ export default function LoginPage() {
       }
     } catch (err: any) {
       setError(err.message);
+    } finally {
       setLoading(false);
     }
   };
@@ -116,7 +113,7 @@ export default function LoginPage() {
               ) : (
                 <>
                   <LogIn className="w-4 h-4" />
-                  {isSignUp ? 'Establish Identity' : 'Authenticate Match'}
+                  {isSignUp ? 'Sign Up' : 'Login'}
                 </>
               )}
             </button>
@@ -153,13 +150,6 @@ export default function LoginPage() {
             >
               {isSignUp ? 'Return to Login' : 'Create New Account'}
             </button>
-            <Link 
-              to="/admin/login"
-              className="text-[10px] font-black text-on-surface-variant uppercase tracking-widest hover:text-[#2eb774] transition-all flex items-center gap-2 pb-2"
-            >
-              <ShieldCheck className="w-3 h-3" />
-              Administrative Portal
-            </Link>
           </div>
         </div>
       </motion.div>

@@ -7,8 +7,14 @@ export interface Match {
   events: string[];
   startTime: string;
   league: string;
-  genre: 'football' | 'basketball' | 'tennis' | 'f1';
+  genre: 'football' | 'basketball' | 'tennis' | 'f1' | 'esports';
   summary?: string;
+  date?: string; // YYYY-MM-DD format
+  region?: 'Global' | 'USA' | 'Europe';
+  logoA?: string;
+  logoB?: string;
+  isIndividual?: boolean;
+  banner?: string;
   excitement?: {
     score: number;
     competitiveness: 'high' | 'medium' | 'low';

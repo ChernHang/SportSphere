@@ -1,12 +1,12 @@
 import { Match, Recommendation, UserPreferences } from '../types';
 
 export const geminiService = {
-  async generateSummary(matchData: { teamA: string; teamB: string; tournament: string; score: string; events: string }) {
+  async generateSummary(matchData: { teamA: string; teamB: string; tournament: string; score: string; events: string }, variant: string = 'default') {
     const response = await fetch('/api/gemini/generate-summary', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ matchData }),
-    });
+       method: 'POST',
+       headers: { 'Content-Type': 'application/json' },
+       body: JSON.stringify({ matchData, variant }),
+     });
     if (!response.ok) throw new Error('Failed to generate summary');
     return response.json();
   },

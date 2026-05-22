@@ -129,7 +129,7 @@ export default function Dashboard() {
         const { data, timestamp } = JSON.parse(cachedData);
         // 6 hours in milliseconds = 6 * 1000 * 60 * 60
         if (Date.now() - timestamp < 21600000) {
-          setRecommendations(data);
+          setRecommendations(data.recommendations || data);
         }
       } catch (err) {
         console.error("Cache parsing issue:", err);
@@ -144,8 +144,9 @@ export default function Dashboard() {
         favouriteSports: ['Football', 'Basketball', 'f1'],
         favouriteTeams: ['Real Madrid', 'Lakers', 'Hamilton']
       };
-      const data = await geminiService.recommendGames(userPrefs, mockMatches);
-      setRecommendations(data);
+      const response = await geminiService.recommendGames(userPrefs, mockMatches);
+      const data = response.recommendations || response;
+      setRecommendations(data as any);
       // Cache recommendations with timestamp
       localStorage.setItem('sportsphere_game_recs', JSON.stringify({
         data,

@@ -11,11 +11,11 @@ export const mockMatches: Match[] = [
     startTime: 'LIVE',
     league: 'Group A',
     genre: 'football',
-    date: '2026-05-22',
+    date: '2026-05-22', // FRI
     region: 'Europe',
     logoA: 'https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg',
     logoB: 'https://upload.wikimedia.org/wikipedia/en/e/eb/Manchester_City_FC_badge.svg',
-    banner: 'https://placehold.co/800x400?text=Real+Madrid+vs+Man+City'
+    banner: 'https://placehold.co/800x400?text=Match'
   },
   {
     id: '2',
@@ -27,11 +27,11 @@ export const mockMatches: Match[] = [
     startTime: '21:00',
     league: 'Finals',
     genre: 'basketball',
-    date: '2026-05-22',
+    date: '2026-05-22', // FRI
     region: 'USA',
     logoA: 'https://upload.wikimedia.org/wikipedia/commons/3/3c/Los_Angeles_Lakers_logo.svg',
     logoB: 'https://upload.wikimedia.org/wikipedia/en/8/8f/Boston_Celtics.svg',
-    banner: 'https://placehold.co/800x400?text=Lakers+vs+Celtics'
+    banner: 'https://placehold.co/800x400?text=Match'
   },
   {
     id: '3',
@@ -43,12 +43,12 @@ export const mockMatches: Match[] = [
     startTime: 'LIVE',
     league: 'Race Day',
     genre: 'f1',
-    date: '2026-05-22',
+    date: '2026-05-22', // FRI
     region: 'Global',
     isIndividual: true,
-    logoA: 'https://placehold.co/100x100?text=VER',
-    logoB: 'https://placehold.co/100x100?text=HAM',
-    banner: 'https://placehold.co/800x400?text=Monaco+GP'
+    logoA: 'https://placehold.co/800x400?text=Match',
+    logoB: 'https://placehold.co/800x400?text=Match',
+    banner: 'https://placehold.co/800x400?text=Match'
   },
   {
     id: '4',
@@ -60,12 +60,12 @@ export const mockMatches: Match[] = [
     startTime: '14:05',
     league: 'Semi-Finals',
     genre: 'tennis',
-    date: '2026-05-22',
+    date: '2026-05-22', // FRI
     region: 'Europe',
     isIndividual: true,
-    logoA: 'https://placehold.co/100x100?text=DJO',
-    logoB: 'https://placehold.co/100x100?text=ALC',
-    banner: 'https://placehold.co/800x400?text=Wimbledon+Semi-Finals'
+    logoA: 'https://placehold.co/800x400?text=Match',
+    logoB: 'https://placehold.co/800x400?text=Match',
+    banner: 'https://placehold.co/800x400?text=Match'
   },
   {
     id: '5',
@@ -77,11 +77,11 @@ export const mockMatches: Match[] = [
     startTime: '20:45',
     league: 'Fixture 38',
     genre: 'football',
-    date: '2026-05-20',
+    date: '2026-05-20', // WED
     region: 'Europe',
     logoA: 'https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg',
     logoB: 'https://upload.wikimedia.org/wikipedia/en/c/cc/Chelsea_FC.svg',
-    banner: 'https://placehold.co/800x400?text=Liverpool+vs+Chelsea'
+    banner: 'https://placehold.co/800x400?text=Match'
   },
   {
     id: '6',
@@ -89,15 +89,15 @@ export const mockMatches: Match[] = [
     teamB: 'Suns',
     score: '112 - 104',
     tournament: 'NBA Playoffs',
-    events: ["Q1: Suns start hot, Booker scores 12", "Q4: Curry seals victory with three consecutive 3s"],
+    events: ["Q1: Suns start hot, Booker scores 12", "Q4: Curry seals victory with three consecutives 3s"],
     startTime: '22:00',
     league: 'Western Conference',
     genre: 'basketball',
-    date: '2026-05-18',
+    date: '2026-05-18', // MON
     region: 'USA',
     logoA: 'https://upload.wikimedia.org/wikipedia/en/0/01/Golden_State_Warriors_logo.svg',
-    logoB: 'https://placehold.co/100x100?text=PHX',
-    banner: 'https://placehold.co/800x400?text=Warriors+vs+Suns'
+    logoB: 'https://placehold.co/800x400?text=Match',
+    banner: 'https://placehold.co/800x400?text=Match'
   },
   {
     id: '7',
@@ -109,12 +109,12 @@ export const mockMatches: Match[] = [
     startTime: 'LIVE',
     league: 'Quarter-Finals',
     genre: 'tennis',
-    date: '2026-05-19',
+    date: '2026-05-19', // TUE
     region: 'Europe',
     isIndividual: true,
-    logoA: 'https://placehold.co/100x100?text=ALC',
-    logoB: 'https://placehold.co/100x100?text=SIN',
-    banner: 'https://placehold.co/800x400?text=French+Open+QF'
+    logoA: 'https://placehold.co/800x400?text=Match',
+    logoB: 'https://placehold.co/800x400?text=Match',
+    banner: 'https://placehold.co/800x400?text=Match'
   },
   {
     id: '8',
@@ -126,11 +126,11 @@ export const mockMatches: Match[] = [
     startTime: '20:00',
     league: 'Quarter Finals',
     genre: 'football',
-    date: '2026-05-23',
+    date: '2026-05-23', // SAT
     region: 'Europe',
     logoA: 'https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg',
-    logoB: 'https://placehold.co/100x100?text=FCB',
-    banner: 'https://placehold.co/800x400?text=Arsenal+vs+Bayern'
+    logoB: 'https://placehold.co/800x400?text=Match',
+    banner: 'https://placehold.co/800x400?text=Match'
   },
   {
     id: '9',
@@ -142,12 +142,12 @@ export const mockMatches: Match[] = [
     startTime: '13:00',
     league: 'Qualifying',
     genre: 'f1',
-    date: '2026-05-24',
+    date: '2026-05-24', // SUN
     region: 'Global',
     isIndividual: true,
-    logoA: 'https://placehold.co/100x100?text=VER',
-    logoB: 'https://placehold.co/100x100?text=LEC',
-    banner: 'https://placehold.co/800x400?text=British+GP+Qualifying'
+    logoA: 'https://placehold.co/800x400?text=Match',
+    logoB: 'https://placehold.co/800x400?text=Match',
+    banner: 'https://placehold.co/800x400?text=Match'
   },
   {
     id: '10',
@@ -159,11 +159,11 @@ export const mockMatches: Match[] = [
     startTime: 'LIVE',
     league: 'Playoffs',
     genre: 'esports',
-    date: '2026-05-22',
+    date: '2026-05-22', // FRI
     region: 'Global',
     logoA: 'https://upload.wikimedia.org/wikipedia/en/f/f9/T1_logo.svg',
-    logoB: 'https://placehold.co/100x100?text=GEN',
-    banner: 'https://placehold.co/800x400?text=T1+vs+Gen.G'
+    logoB: 'https://placehold.co/800x400?text=Match',
+    banner: 'https://placehold.co/800x400?text=Match'
   },
   {
     id: '11',
@@ -175,10 +175,10 @@ export const mockMatches: Match[] = [
     startTime: '19:30',
     league: 'Grand Finals',
     genre: 'esports',
-    date: '2026-05-22',
+    date: '2026-05-22', // FRI
     region: 'Global',
-    logoA: 'https://placehold.co/100x100?text=SEN',
-    logoB: 'https://placehold.co/100x100?text=FNC',
-    banner: 'https://placehold.co/800x400?text=VCT+Grand+Finals'
+    logoA: 'https://placehold.co/800x400?text=Match',
+    logoB: 'https://placehold.co/800x400?text=Match',
+    banner: 'https://placehold.co/800x400?text=Match'
   }
 ];
